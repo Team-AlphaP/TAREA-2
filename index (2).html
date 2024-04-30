@@ -7480,29 +7480,332 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Importamos la base de datos en formato CSV</span>
-<span class="n">link</span><span class="o">=</span><span class="s2">"https://docs.google.com/spreadsheets/d/e/2PACX-1vSPVJIoDhupNyUpYD65FSHt6kMmF_KaxE2RD6CV1FOMP4vVw7WfKQMqpqo0ieD9vhMAmYP1NpBmw0od/pubhtml?gid=658985149&amp;single=true"</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">Datalista</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">link</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">flavor</span><span class="o">=</span><span class="s1">'bs4'</span><span class="p">)</span>
-<span class="n">data</span><span class="o">=</span><span class="n">Datalista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">link</span><span class="o">=</span><span class="s2">"https://github.com/Team-AlphaP/TAREA-2/raw/main/dataUN%20-%20HDR21-22_Statistical_Annex_HDI_Table%20(1).csv"</span>
+<span class="n">data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=81a35317-c77a-4da1-bb4d-4e0a868d3b6e">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=81a35317-c77a-4da1-bb4d-4e0a868d3b6e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>['Back',
+ 'Table 1. Human Development Index and its components',
+ 'Unnamed: 2',
+ 'Unnamed: 3',
+ 'Unnamed: 4',
+ 'Unnamed: 5',
+ 'Unnamed: 6',
+ 'Unnamed: 7',
+ 'Unnamed: 8',
+ 'Unnamed: 9',
+ 'Unnamed: 10',
+ 'Unnamed: 11',
+ 'Unnamed: 12',
+ 'Unnamed: 13',
+ 'Unnamed: 14']</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f9dc34e0-96c6-4a8f-84fb-8a213232ad5c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Para eliminar espacios en los títulos de las columnas</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="s1">''</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=64687fcd-9a05-4002-9e03-3413e84cf75d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Back</th>
+<th>Table1.HumanDevelopmentIndexanditscomponents</th>
+<th>Unnamed:2</th>
+<th>Unnamed:3</th>
+<th>Unnamed:4</th>
+<th>Unnamed:5</th>
+<th>Unnamed:6</th>
+<th>Unnamed:7</th>
+<th>Unnamed:8</th>
+<th>Unnamed:9</th>
+<th>Unnamed:10</th>
+<th>Unnamed:11</th>
+<th>Unnamed:12</th>
+<th>Unnamed:13</th>
+<th>Unnamed:14</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>1</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>SDG3</td>
+<td>NaN</td>
+<td>SDG4.3</td>
+<td>NaN</td>
+<td>SDG4.4</td>
+<td>NaN</td>
+<td>SDG8.5</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>2</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>3</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>Human Development Index (HDI)</td>
+<td>NaN</td>
+<td>Life expectancy at birth</td>
+<td>NaN</td>
+<td>Expected years of schooling</td>
+<td>NaN</td>
+<td>Mean years of schooling</td>
+<td>NaN</td>
+<td>Gross national income (GNI) per capita</td>
+<td>NaN</td>
+<td>GNI per capita rank minus HDI rank</td>
+<td>NaN</td>
+<td>HDI rank</td>
+</tr>
+<tr>
+<th>4</th>
+<td>HDI rank</td>
+<td>Country</td>
+<td>Value</td>
+<td>NaN</td>
+<td>(years)</td>
+<td>NaN</td>
+<td>(years)</td>
+<td>NaN</td>
+<td>(years)</td>
+<td>NaN</td>
+<td>(2017 PPP $)</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>271</th>
+<td>NaN</td>
+<td>Column 2: UNDESA (2022a).</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>272</th>
+<td>NaN</td>
+<td>Column 3: CEDLAS and World Bank (2022), ICF Ma...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>273</th>
+<td>NaN</td>
+<td>Column 4: Barro and Lee (2018), ICF Macro Demo...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>274</th>
+<td>NaN</td>
+<td>Column 5: IMF (2022), UNDESA (2022b), United N...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>275</th>
+<td>NaN</td>
+<td>Column 6: Calculated based on data in columns ...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+<p>276 rows × 15 columns</p>
+</div>
 </div>
 </div>
 </div>
@@ -7512,11 +7815,11 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># renombramos algunos nombres de las columnas</span>
-<span class="n">nuevos_nombres</span><span class="o">=</span><span class="p">{</span><span class="s1">'Unnamed: 2'</span><span class="p">:</span><span class="s1">'Country'</span><span class="p">,</span><span class="s1">'Unnamed: 3'</span><span class="p">:</span><span class="s1">'HDI_Value'</span><span class="p">,</span><span class="s1">'Unnamed: 5'</span><span class="p">:</span><span class="s1">'Life_expectancy'</span><span class="p">,</span><span class="s1">'Unnamed: 7'</span><span class="p">:</span><span class="s1">'Expected_years_of_schooling'</span><span class="p">,</span><span class="s1">'Unnamed: 9'</span><span class="p">:</span><span class="s1">'Mean_years_of_schooling'</span><span class="p">,</span><span class="s1">'Unnamed: 11'</span><span class="p">:</span><span class="s1">'GNI_per'</span><span class="p">,</span><span class="s1">'Unnamed: 13'</span><span class="p">:</span><span class="s1">'GNI_rank'</span><span class="p">,</span><span class="s1">'Unnamed: 15'</span><span class="p">:</span><span class="s1">'HDI_rank'</span><span class="p">}</span>
+<span class="n">nuevos_nombres</span><span class="o">=</span><span class="p">{</span><span class="s1">'Table1.HumanDevelopmentIndexanditscomponents'</span><span class="p">:</span><span class="s1">'Country'</span><span class="p">,</span><span class="s1">'Unnamed:2'</span><span class="p">:</span><span class="s1">'HDI_Value'</span><span class="p">,</span><span class="s1">'Unnamed:4'</span><span class="p">:</span><span class="s1">'Life_expectancy'</span><span class="p">,</span><span class="s1">'Unnamed:6'</span><span class="p">:</span><span class="s1">'Expected_years_of_schooling'</span><span class="p">,</span><span class="s1">'Unnamed:8'</span><span class="p">:</span><span class="s1">'Mean_years_of_schooling'</span><span class="p">,</span><span class="s1">'Unnamed:10'</span><span class="p">:</span><span class="s1">'GNI_per'</span><span class="p">,</span><span class="s1">'Unnamed:12'</span><span class="p">:</span><span class="s1">'GNI_rank'</span><span class="p">,</span><span class="s1">'Unnamed:14'</span><span class="p">:</span><span class="s1">'HDI_rank'</span><span class="p">}</span>
 <span class="n">data_renombrado</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">nuevos_nombres</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -7528,13 +7831,192 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span> <span class="c1"># lista de nombres de columnas a eliminar (datos que no necesitamos)</span>
-<span class="n">columnas_a_eliminar</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Unnamed: 0'</span><span class="p">,</span> <span class="s1">'Unnamed: 1'</span><span class="p">,</span><span class="s1">'Unnamed: 4'</span><span class="p">,</span> <span class="s1">'Unnamed: 6'</span><span class="p">,</span> <span class="s1">'Unnamed: 8'</span><span class="p">,</span><span class="s1">'Unnamed: 10'</span><span class="p">,</span> <span class="s1">'Unnamed: 12'</span><span class="p">,</span><span class="s1">'Unnamed: 14'</span><span class="p">]</span>
+<span class="n">columnas_a_eliminar</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Back'</span><span class="p">,</span> <span class="s1">'Unnamed:3'</span><span class="p">,</span><span class="s1">'Unnamed:5'</span><span class="p">,</span> <span class="s1">'Unnamed:7'</span><span class="p">,</span> <span class="s1">'Unnamed:9'</span><span class="p">,</span><span class="s1">'Unnamed:11'</span><span class="p">,</span> <span class="s1">'Unnamed:13'</span><span class="p">]</span>
 <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">columnas_a_eliminar</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=64b3a6ed-d4f6-479a-ba26-56152e0b5b96">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Country</th>
+<th>HDI_Value</th>
+<th>Life_expectancy</th>
+<th>Expected_years_of_schooling</th>
+<th>Mean_years_of_schooling</th>
+<th>GNI_per</th>
+<th>GNI_rank</th>
+<th>HDI_rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>1</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>SDG3</td>
+<td>SDG4.3</td>
+<td>SDG4.4</td>
+<td>SDG8.5</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>2</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>3</th>
+<td>NaN</td>
+<td>Human Development Index (HDI)</td>
+<td>Life expectancy at birth</td>
+<td>Expected years of schooling</td>
+<td>Mean years of schooling</td>
+<td>Gross national income (GNI) per capita</td>
+<td>GNI per capita rank minus HDI rank</td>
+<td>HDI rank</td>
+</tr>
+<tr>
+<th>4</th>
+<td>Country</td>
+<td>Value</td>
+<td>(years)</td>
+<td>(years)</td>
+<td>(years)</td>
+<td>(2017 PPP $)</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>271</th>
+<td>Column 2: UNDESA (2022a).</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>272</th>
+<td>Column 3: CEDLAS and World Bank (2022), ICF Ma...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>273</th>
+<td>Column 4: Barro and Lee (2018), ICF Macro Demo...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>274</th>
+<td>Column 5: IMF (2022), UNDESA (2022b), United N...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>275</th>
+<td>Column 6: Calculated based on data in columns ...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+<p>276 rows × 8 columns</p>
+</div>
 </div>
 </div>
 </div>
@@ -7544,7 +8026,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Eliminar filas donde no hay nada (NA)</span>
@@ -7554,16 +8036,222 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=002953ff-1e7f-4ddb-a467-004afb9890f9">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9039452c-b4d2-45c0-96e9-109fc5ac042d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Country</th>
+<th>HDI_Value</th>
+<th>Life_expectancy</th>
+<th>Expected_years_of_schooling</th>
+<th>Mean_years_of_schooling</th>
+<th>GNI_per</th>
+<th>GNI_rank</th>
+<th>HDI_rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>7</th>
+<td>Switzerland</td>
+<td>962</td>
+<td>84.0</td>
+<td>16.5</td>
+<td>13.9</td>
+<td>66,933</td>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr>
+<th>8</th>
+<td>Norway</td>
+<td>961</td>
+<td>83.2</td>
+<td>18.2</td>
+<td>13.0</td>
+<td>64,660</td>
+<td>6</td>
+<td>1</td>
+</tr>
+<tr>
+<th>9</th>
+<td>Iceland</td>
+<td>959</td>
+<td>82.7</td>
+<td>19.2</td>
+<td>13.8</td>
+<td>55,782</td>
+<td>11</td>
+<td>2</td>
+</tr>
+<tr>
+<th>10</th>
+<td>Hong Kong, China (SAR)</td>
+<td>952</td>
+<td>85.5</td>
+<td>17.3</td>
+<td>12.2</td>
+<td>62,607</td>
+<td>6</td>
+<td>4</td>
+</tr>
+<tr>
+<th>11</th>
+<td>Australia</td>
+<td>951</td>
+<td>84.5</td>
+<td>21.1</td>
+<td>12.7</td>
+<td>49,238</td>
+<td>18</td>
+<td>5</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>221</th>
+<td>Sub-Saharan Africa</td>
+<td>547</td>
+<td>60.1</td>
+<td>10.3</td>
+<td>6.0</td>
+<td>3,699</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th>223</th>
+<td>Least developed countries</td>
+<td>540</td>
+<td>64.2</td>
+<td>10.2</td>
+<td>5.2</td>
+<td>2,881</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th>224</th>
+<td>Small island developing states</td>
+<td>730</td>
+<td>70.3</td>
+<td>12.4</td>
+<td>9.1</td>
+<td>16,782</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th>226</th>
+<td>Organisation for Economic Co-operation and Dev...</td>
+<td>899</td>
+<td>79.0</td>
+<td>16.5</td>
+<td>12.3</td>
+<td>45,087</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th>228</th>
+<td>World</td>
+<td>732</td>
+<td>71.4</td>
+<td>12.8</td>
+<td>8.6</td>
+<td>16,752</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>210 rows × 8 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=002953ff-1e7f-4ddb-a467-004afb9890f9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>&lt;class 'pandas.core.frame.DataFrame'&gt;
+Index: 210 entries, 7 to 228
+Data columns (total 8 columns):
+ #   Column                       Non-Null Count  Dtype 
+---  ------                       --------------  ----- 
+ 0   Country                      210 non-null    object
+ 1   HDI_Value                    210 non-null    object
+ 2   Life_expectancy              210 non-null    object
+ 3   Expected_years_of_schooling  210 non-null    object
+ 4   Mean_years_of_schooling      210 non-null    object
+ 5   GNI_per                      210 non-null    object
+ 6   GNI_rank                     210 non-null    object
+ 7   HDI_rank                     210 non-null    object
+dtypes: object(8)
+memory usage: 14.8+ KB
+</pre>
 </div>
 </div>
 </div>
@@ -7573,7 +8261,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Para detectar la presencia de símbolos en los datos numéricos que no sean numéricos ni puntuales:</span>
@@ -7582,12 +8270,12 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1930bab4-f855-47c3-928e-e0d300c59094">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1930bab4-f855-47c3-928e-e0d300c59094">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># En la columna HDI_Value</span>
@@ -7597,12 +8285,24 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c2441b7c-d96a-4712-a2b3-686b38f8ee67">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>set()</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c2441b7c-d96a-4712-a2b3-686b38f8ee67">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># En la columna Life_expectancy</span>
@@ -7612,12 +8312,24 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f87adb8a-dbd5-435b-a95e-9dac9cb400dd">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>set()</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f87adb8a-dbd5-435b-a95e-9dac9cb400dd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># En la columna Expected_years_of_schooling</span>
@@ -7627,12 +8339,24 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3c7a315c-2ca9-4bbc-9a43-da82ea5038b0">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>set()</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3c7a315c-2ca9-4bbc-9a43-da82ea5038b0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># En la columna Mean_years_of_schooling</span>
@@ -7642,12 +8366,24 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fc2e511e-1aad-4512-a72c-5fed22a2e445">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>set()</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fc2e511e-1aad-4512-a72c-5fed22a2e445">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># En la columna GNI_per</span>
@@ -7657,12 +8393,217 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=0fa7e20c-a57f-498d-91e1-a7b8d3db1e1c">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>{','}</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ab327fba-80fb-4000-a98f-f720c60d63d7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">'GNI_per'</span><span class="p">]</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">GNI_per</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">","</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=55f1c629-7cd1-4365-9885-1ebcd1b3e13b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Country</th>
+<th>HDI_Value</th>
+<th>Life_expectancy</th>
+<th>Expected_years_of_schooling</th>
+<th>Mean_years_of_schooling</th>
+<th>GNI_per</th>
+<th>GNI_rank</th>
+<th>HDI_rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>7</th>
+<td>Switzerland</td>
+<td>962</td>
+<td>84.0</td>
+<td>16.5</td>
+<td>13.9</td>
+<td>66933</td>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr>
+<th>8</th>
+<td>Norway</td>
+<td>961</td>
+<td>83.2</td>
+<td>18.2</td>
+<td>13.0</td>
+<td>64660</td>
+<td>6</td>
+<td>1</td>
+</tr>
+<tr>
+<th>9</th>
+<td>Iceland</td>
+<td>959</td>
+<td>82.7</td>
+<td>19.2</td>
+<td>13.8</td>
+<td>55782</td>
+<td>11</td>
+<td>2</td>
+</tr>
+<tr>
+<th>10</th>
+<td>Hong Kong, China (SAR)</td>
+<td>952</td>
+<td>85.5</td>
+<td>17.3</td>
+<td>12.2</td>
+<td>62607</td>
+<td>6</td>
+<td>4</td>
+</tr>
+<tr>
+<th>11</th>
+<td>Australia</td>
+<td>951</td>
+<td>84.5</td>
+<td>21.1</td>
+<td>12.7</td>
+<td>49238</td>
+<td>18</td>
+<td>5</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>221</th>
+<td>Sub-Saharan Africa</td>
+<td>547</td>
+<td>60.1</td>
+<td>10.3</td>
+<td>6.0</td>
+<td>3699</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th>223</th>
+<td>Least developed countries</td>
+<td>540</td>
+<td>64.2</td>
+<td>10.2</td>
+<td>5.2</td>
+<td>2881</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th>224</th>
+<td>Small island developing states</td>
+<td>730</td>
+<td>70.3</td>
+<td>12.4</td>
+<td>9.1</td>
+<td>16782</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th>226</th>
+<td>Organisation for Economic Co-operation and Dev...</td>
+<td>899</td>
+<td>79.0</td>
+<td>16.5</td>
+<td>12.3</td>
+<td>45087</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th>228</th>
+<td>World</td>
+<td>732</td>
+<td>71.4</td>
+<td>12.8</td>
+<td>8.6</td>
+<td>16752</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>210 rows × 8 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0fa7e20c-a57f-498d-91e1-a7b8d3db1e1c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># En la columna GNI_rank</span>
@@ -7672,12 +8613,24 @@ a.anchor-link {
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>{'-', '—'}</pre>
+</div>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1d74aecc-1200-4d17-84c3-e188aaba2473">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Deshacernos de cualquier valor detectado en el paso anterior</span>
@@ -7687,12 +8640,191 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=431ca4d5-be40-4ce8-bf8c-4863b5b32dfd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Country</th>
+<th>HDI_Value</th>
+<th>Life_expectancy</th>
+<th>Expected_years_of_schooling</th>
+<th>Mean_years_of_schooling</th>
+<th>GNI_per</th>
+<th>GNI_rank</th>
+<th>HDI_rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>7</th>
+<td>Switzerland</td>
+<td>962</td>
+<td>84.0</td>
+<td>16.5</td>
+<td>13.9</td>
+<td>66933</td>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr>
+<th>8</th>
+<td>Norway</td>
+<td>961</td>
+<td>83.2</td>
+<td>18.2</td>
+<td>13.0</td>
+<td>64660</td>
+<td>6</td>
+<td>1</td>
+</tr>
+<tr>
+<th>9</th>
+<td>Iceland</td>
+<td>959</td>
+<td>82.7</td>
+<td>19.2</td>
+<td>13.8</td>
+<td>55782</td>
+<td>11</td>
+<td>2</td>
+</tr>
+<tr>
+<th>10</th>
+<td>Hong Kong, China (SAR)</td>
+<td>952</td>
+<td>85.5</td>
+<td>17.3</td>
+<td>12.2</td>
+<td>62607</td>
+<td>6</td>
+<td>4</td>
+</tr>
+<tr>
+<th>11</th>
+<td>Australia</td>
+<td>951</td>
+<td>84.5</td>
+<td>21.1</td>
+<td>12.7</td>
+<td>49238</td>
+<td>18</td>
+<td>5</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>221</th>
+<td>Sub-Saharan Africa</td>
+<td>547</td>
+<td>60.1</td>
+<td>10.3</td>
+<td>6.0</td>
+<td>3699</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th>223</th>
+<td>Least developed countries</td>
+<td>540</td>
+<td>64.2</td>
+<td>10.2</td>
+<td>5.2</td>
+<td>2881</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th>224</th>
+<td>Small island developing states</td>
+<td>730</td>
+<td>70.3</td>
+<td>12.4</td>
+<td>9.1</td>
+<td>16782</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th>226</th>
+<td>Organisation for Economic Co-operation and Dev...</td>
+<td>899</td>
+<td>79.0</td>
+<td>16.5</td>
+<td>12.3</td>
+<td>45087</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<th>228</th>
+<td>World</td>
+<td>732</td>
+<td>71.4</td>
+<td>12.8</td>
+<td>8.6</td>
+<td>16752</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>210 rows × 8 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a703e6b0-4363-49e0-99b0-07ac104c244c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">'GNI_rank'</span><span class="p">]</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">GNI_rank</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"—"</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span>
@@ -7701,12 +8833,191 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e5093977-c637-4824-b090-51276a8862e5">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=95bf1978-2f0a-47ab-93b1-3225b745550d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Country</th>
+<th>HDI_Value</th>
+<th>Life_expectancy</th>
+<th>Expected_years_of_schooling</th>
+<th>Mean_years_of_schooling</th>
+<th>GNI_per</th>
+<th>GNI_rank</th>
+<th>HDI_rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>7</th>
+<td>Switzerland</td>
+<td>962</td>
+<td>84.0</td>
+<td>16.5</td>
+<td>13.9</td>
+<td>66933</td>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr>
+<th>8</th>
+<td>Norway</td>
+<td>961</td>
+<td>83.2</td>
+<td>18.2</td>
+<td>13.0</td>
+<td>64660</td>
+<td>6</td>
+<td>1</td>
+</tr>
+<tr>
+<th>9</th>
+<td>Iceland</td>
+<td>959</td>
+<td>82.7</td>
+<td>19.2</td>
+<td>13.8</td>
+<td>55782</td>
+<td>11</td>
+<td>2</td>
+</tr>
+<tr>
+<th>10</th>
+<td>Hong Kong, China (SAR)</td>
+<td>952</td>
+<td>85.5</td>
+<td>17.3</td>
+<td>12.2</td>
+<td>62607</td>
+<td>6</td>
+<td>4</td>
+</tr>
+<tr>
+<th>11</th>
+<td>Australia</td>
+<td>951</td>
+<td>84.5</td>
+<td>21.1</td>
+<td>12.7</td>
+<td>49238</td>
+<td>18</td>
+<td>5</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>221</th>
+<td>Sub-Saharan Africa</td>
+<td>547</td>
+<td>60.1</td>
+<td>10.3</td>
+<td>6.0</td>
+<td>3699</td>
+<td></td>
+<td>—</td>
+</tr>
+<tr>
+<th>223</th>
+<td>Least developed countries</td>
+<td>540</td>
+<td>64.2</td>
+<td>10.2</td>
+<td>5.2</td>
+<td>2881</td>
+<td></td>
+<td>—</td>
+</tr>
+<tr>
+<th>224</th>
+<td>Small island developing states</td>
+<td>730</td>
+<td>70.3</td>
+<td>12.4</td>
+<td>9.1</td>
+<td>16782</td>
+<td></td>
+<td>—</td>
+</tr>
+<tr>
+<th>226</th>
+<td>Organisation for Economic Co-operation and Dev...</td>
+<td>899</td>
+<td>79.0</td>
+<td>16.5</td>
+<td>12.3</td>
+<td>45087</td>
+<td></td>
+<td>—</td>
+</tr>
+<tr>
+<th>228</th>
+<td>World</td>
+<td>732</td>
+<td>71.4</td>
+<td>12.8</td>
+<td>8.6</td>
+<td>16752</td>
+<td></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>210 rows × 8 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e5093977-c637-4824-b090-51276a8862e5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># En la columna HDI_rank</span>
@@ -7716,16 +9027,207 @@ a.anchor-link {
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>{'—'}</pre>
+</div>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ab05172f-6e82-4937-9240-5c01ff2f7bca">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">'GNI_rank'</span><span class="p">]</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">HDI_rank</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"—"</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">'HDI_rank'</span><span class="p">]</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">HDI_rank</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"—"</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a5a2a294-9686-4d97-83a2-cec8922bb32f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Country</th>
+<th>HDI_Value</th>
+<th>Life_expectancy</th>
+<th>Expected_years_of_schooling</th>
+<th>Mean_years_of_schooling</th>
+<th>GNI_per</th>
+<th>GNI_rank</th>
+<th>HDI_rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>7</th>
+<td>Switzerland</td>
+<td>962</td>
+<td>84.0</td>
+<td>16.5</td>
+<td>13.9</td>
+<td>66933</td>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr>
+<th>8</th>
+<td>Norway</td>
+<td>961</td>
+<td>83.2</td>
+<td>18.2</td>
+<td>13.0</td>
+<td>64660</td>
+<td>6</td>
+<td>1</td>
+</tr>
+<tr>
+<th>9</th>
+<td>Iceland</td>
+<td>959</td>
+<td>82.7</td>
+<td>19.2</td>
+<td>13.8</td>
+<td>55782</td>
+<td>11</td>
+<td>2</td>
+</tr>
+<tr>
+<th>10</th>
+<td>Hong Kong, China (SAR)</td>
+<td>952</td>
+<td>85.5</td>
+<td>17.3</td>
+<td>12.2</td>
+<td>62607</td>
+<td>6</td>
+<td>4</td>
+</tr>
+<tr>
+<th>11</th>
+<td>Australia</td>
+<td>951</td>
+<td>84.5</td>
+<td>21.1</td>
+<td>12.7</td>
+<td>49238</td>
+<td>18</td>
+<td>5</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>221</th>
+<td>Sub-Saharan Africa</td>
+<td>547</td>
+<td>60.1</td>
+<td>10.3</td>
+<td>6.0</td>
+<td>3699</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>223</th>
+<td>Least developed countries</td>
+<td>540</td>
+<td>64.2</td>
+<td>10.2</td>
+<td>5.2</td>
+<td>2881</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>224</th>
+<td>Small island developing states</td>
+<td>730</td>
+<td>70.3</td>
+<td>12.4</td>
+<td>9.1</td>
+<td>16782</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>226</th>
+<td>Organisation for Economic Co-operation and Dev...</td>
+<td>899</td>
+<td>79.0</td>
+<td>16.5</td>
+<td>12.3</td>
+<td>45087</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>228</th>
+<td>World</td>
+<td>732</td>
+<td>71.4</td>
+<td>12.8</td>
+<td>8.6</td>
+<td>16752</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>210 rows × 8 columns</p>
+</div>
 </div>
 </div>
 </div>
@@ -7735,7 +9237,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Para que solo haya numeros en los datos y en los que no (NaN)</span>
@@ -7749,7 +9251,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">'HDI_Value'</span><span class="p">]</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">HDI_Value</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">'(\d+)'</span><span class="p">)</span>
@@ -7763,7 +9265,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">'Life_expectancy'</span><span class="p">]</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">Life_expectancy</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">'(\d+)'</span><span class="p">)</span>
@@ -7777,7 +9279,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">'Expected_years_of_schooling'</span><span class="p">]</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">Expected_years_of_schooling</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">'(\d+)'</span><span class="p">)</span>
@@ -7791,7 +9293,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">'Mean_years_of_schooling'</span><span class="p">]</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">Mean_years_of_schooling</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">'(\d+)'</span><span class="p">)</span>
@@ -7805,7 +9307,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">'GNI_per'</span><span class="p">]</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">GNI_per</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">'(\d+)'</span><span class="p">)</span>
@@ -7819,7 +9321,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">'GNI_rank'</span><span class="p">]</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">GNI_rank</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">'(\d+)'</span><span class="p">)</span>
@@ -7833,7 +9335,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">'HDI_rank'</span><span class="p">]</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">HDI_rank</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">'(\d+)'</span><span class="p">)</span>
@@ -7847,7 +9349,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Asegurarse que las celdas con texto no tengan espacios al final ni al principio</span>
@@ -7856,12 +9358,12 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c9016a79-810f-4ad4-ab8a-8c8d4f68b026">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c9016a79-810f-4ad4-ab8a-8c8d4f68b026">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">objectCols</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">'object'</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
@@ -7871,12 +9373,27 @@ a.anchor-link {
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>Index(['Country', 'HDI_Value', 'Life_expectancy',
+       'Expected_years_of_schooling', 'Mean_years_of_schooling', 'GNI_per',
+       'GNI_rank', 'HDI_rank'],
+      dtype='object')</pre>
+</div>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=6a73a3ff-2003-4999-a07f-2f64eb719e72">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">objectCols</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">col</span><span class="p">:</span><span class="n">col</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
@@ -7890,7 +9407,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Asegurarse que no haya espacios como parte de los nombres de las columnas</span>
@@ -7900,7 +9417,186 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3bd3905d-60b2-454f-8fff-61093e2bbb3d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3bd3905d-60b2-454f-8fff-61093e2bbb3d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Country</th>
+<th>HDI_Value</th>
+<th>Life_expectancy</th>
+<th>Expected_years_of_schooling</th>
+<th>Mean_years_of_schooling</th>
+<th>GNI_per</th>
+<th>GNI_rank</th>
+<th>HDI_rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>7</th>
+<td>Switzerland</td>
+<td>962</td>
+<td>84</td>
+<td>16</td>
+<td>13</td>
+<td>66933</td>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr>
+<th>8</th>
+<td>Norway</td>
+<td>961</td>
+<td>83</td>
+<td>18</td>
+<td>13</td>
+<td>64660</td>
+<td>6</td>
+<td>1</td>
+</tr>
+<tr>
+<th>9</th>
+<td>Iceland</td>
+<td>959</td>
+<td>82</td>
+<td>19</td>
+<td>13</td>
+<td>55782</td>
+<td>11</td>
+<td>2</td>
+</tr>
+<tr>
+<th>10</th>
+<td>Hong Kong, China (SAR)</td>
+<td>952</td>
+<td>85</td>
+<td>17</td>
+<td>12</td>
+<td>62607</td>
+<td>6</td>
+<td>4</td>
+</tr>
+<tr>
+<th>11</th>
+<td>Australia</td>
+<td>951</td>
+<td>84</td>
+<td>21</td>
+<td>12</td>
+<td>49238</td>
+<td>18</td>
+<td>5</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>221</th>
+<td>Sub-Saharan Africa</td>
+<td>547</td>
+<td>60</td>
+<td>10</td>
+<td>6</td>
+<td>3699</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>223</th>
+<td>Least developed countries</td>
+<td>540</td>
+<td>64</td>
+<td>10</td>
+<td>5</td>
+<td>2881</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>224</th>
+<td>Small island developing states</td>
+<td>730</td>
+<td>70</td>
+<td>12</td>
+<td>9</td>
+<td>16782</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>226</th>
+<td>Organisation for Economic Co-operation and Dev...</td>
+<td>899</td>
+<td>79</td>
+<td>16</td>
+<td>12</td>
+<td>45087</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>228</th>
+<td>World</td>
+<td>732</td>
+<td>71</td>
+<td>12</td>
+<td>8</td>
+<td>16752</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+<p>210 rows × 8 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=6c66a075-06e4-4251-a430-7c21523b6af1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7908,7 +9604,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span>
+<div class="highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 </div>
 </div>
